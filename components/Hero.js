@@ -17,7 +17,7 @@ function Hero() {
                 <div className="max-w-xl mx-auto text-center">
                     <h1 className="tracking-tighter text-white">
                         <span className="font-sans font-normal text-7xl">Furniture</span><br />
-                        <span className="font-normal text-8xl">FOR SALING</span>
+                        <span className="font-normal text-8xl">FOR SALLING</span>
                     </h1>
                     <p className="mt-5 font-sans text-base font-normal text-white text-opacity-70">That Is not Ecommerce Website Only For Manufacturer Website</p>
                     <div className="flex items-center justify-center mt-8 space-x-3 sm:space-x-4">
