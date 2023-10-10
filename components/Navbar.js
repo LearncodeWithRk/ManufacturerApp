@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
+
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Function to close the mobile menu
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
       <nav className="bg-white">
@@ -11,46 +18,37 @@ function Nav() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Link href="/"><Image
-                  className="h-12 w-12"
-                  src="https://res.cloudinary.com/dysxcljt2/image/upload/v1695384249/manufacturer/furniturelogo_k7emh0.png"
-                  alt="realestate"
-                  width={100} height={100}
-                /></Link>
+                <Link href="/">
+                  <Image
+                    className="h-12 w-12"
+                    src="https://res.cloudinary.com/dysxcljt2/image/upload/v1695384249/manufacturer/furniturelogo_k7emh0.png"
+                    alt="realestate"
+                    width={100}
+                    height={100}
+                  />
+                </Link>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link href="/"
-                    className=" hover:bg-gray-200 text-black px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                  <Link href="/" onClick={closeMobileMenu} className="hover:bg-gray-200 text-black px-3 py-2 rounded-md text-sm font-medium">
                     HOME
                   </Link>
 
-                  <Link href="/About"
-                    className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                  <Link href="/About" onClick={closeMobileMenu} className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     About us
                   </Link>
 
-                  <Link href="/Offer"
-                    className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                  <Link href="/Offer" onClick={closeMobileMenu} className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Offer
                   </Link>
 
-                  <Link href="/Service"
-                    className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                  <Link href="/Service" onClick={closeMobileMenu} className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Service
                   </Link>
 
-                  <Link href="/Contact"
-                    className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                  <Link href="/Contact" onClick={closeMobileMenu} className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Contact Us
                   </Link>
-
-                 
                 </div>
               </div>
             </div>
@@ -113,45 +111,30 @@ function Nav() {
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link href="/"
-                  className="hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium"
-                >
+                <Link href="/" onClick={closeMobileMenu} className="hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium">
                   HOME
                 </Link>
 
-                <Link href="/About"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
+                <Link href="/About" onClick={closeMobileMenu} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   About
                 </Link>
 
-                <Link href="/Offer"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
+                <Link href="/Offer" onClick={closeMobileMenu} className="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Offer
                 </Link>
 
-                <Link href="/Service"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                 Service
+                <Link href="/Service" onClick={closeMobileMenu} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Service
                 </Link>
 
-                <Link href="/Contact"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
+                <Link href="/Contact" onClick={closeMobileMenu} className="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Contact
                 </Link>
-
-                
               </div>
             </div>
           )}
         </Transition>
       </nav>
-
-     
-     
     </div>
   );
 }
